@@ -1,22 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Login - VisionKart</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="login.js" defer></script>
 </head>
 <body>
-  <div class="login-container">
-    <h2>Welcome to VisionKart</h2>
-    <form onsubmit="login(event)">
-      <input type="text" id="username" placeholder="Enter username" required /><br />
-      <input type="password" id="password" placeholder="Enter password" required /><br />
+  <div class="login-container" id="login-container">
+    <h1>VisionKart Login</h1>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
       <button type="submit">Login</button>
-      <p>Don't have an account? <a href="signup.html">Sign up</a></p>
     </form>
+    <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
   </div>
 
-  <script src="login.js"></script>
+  <div class="login-container" id="signup-container" style="display:none;">
+    <h1>VisionKart Sign Up</h1>
+    <form id="signupForm">
+      <input type="text" id="newUsername" placeholder="Username" required />
+      <input type="password" id="newPassword" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+  </div>
 </body>
 </html>
