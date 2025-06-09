@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Your Cart - VisionKart</title>
+  <title>Cart - VisionKart</title>
   <link rel="stylesheet" href="style.css" />
   <script src="app.js" defer></script>
-  <script src="cart.js" defer></script>
 </head>
 <body>
   <header>
@@ -13,13 +12,20 @@
     <nav>
       <a href="home.html">Home</a> |
       <a href="search.html">Search</a> |
+      <a href="cart.html">Cart</a> |
       <a href="wishlist.html">Wishlist</a>
     </nav>
   </header>
 
   <main>
     <h2>Your Cart</h2>
-    <div class="product-container" id="cart-container"></div>
+    <div id="cart-list" class="product-container"></div>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderList("cart-list", "visionkart-cart");
+    });
+  </script>
 </body>
 </html>
