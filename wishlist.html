@@ -5,6 +5,7 @@
   <title>Wishlist - VisionKart</title>
   <link rel="stylesheet" href="style.css" />
   <script src="app.js" defer></script>
+  <script src="wishlist.js" defer></script>
 </head>
 <body>
   <header>
@@ -13,19 +14,14 @@
       <a href="home.html">Home</a> |
       <a href="search.html">Search</a> |
       <a href="cart.html">Cart</a> |
-      <a href="wishlist.html">Wishlist</a>
+      <a href="wishlist.html">Wishlist</a> |
+      <a href="#" id="logoutBtn">Logout</a>
     </nav>
   </header>
 
   <main>
     <h2>Your Wishlist</h2>
-    <div id="wishlist-list" class="product-container"></div>
+    <div class="product-container" id="wishlist-products"></div>
   </main>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      renderList("wishlist-list", "visionkart-wishlist");
-    });
-  </script>
 </body>
 </html>
