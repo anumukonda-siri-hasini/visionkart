@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>VisionKart - Search</title>
-<link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <title>Search Products - VisionKart</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <header>
+    <h1>VisionKart</h1>
+    <nav>
+      <a href="home.html">Home</a> |
+      <a href="cart.html">Cart</a> |
+      <a href="wishlist.html">Wishlist</a>
+    </nav>
+  </header>
 
-<header>
-  <nav>
-    <a href="home.html">Home</a> |
-    <a href="wishlist.html">Wishlist</a> |
-    <a href="cart.html">Cart</a> |
-    <a href="search.html">Search</a> |
-    <a href="index.html" id="logoutLink">Logout</a>
-  </nav>
-</header>
+  <main>
+    <h2>Search Products</h2>
+    <input type="text" id="searchInput" placeholder="Search by name..." />
+    <div class="product-container" id="search-results"></div>
+  </main>
 
-<main>
-  <h1>Search Products</h1>
-  <input type="text" id="searchInput" placeholder="Search glasses..." />
-  <div id="searchResults" class="product-list"></div>
-</main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("searchInput");
+      const results = document.getElementById("search-results");
 
-<div id="notification-container"></div>
+      input.addEventListener("input", () => {
+        const query = input.value.toLowerCase();
+        const filtered = products.filter(p =>
+          p.name.toLowerCase().includes(query)
+        );
 
-<script src="js/app.js"></script>
-<script src="js/search.js"></script>
+        results.innerHTML = "";
+
+        if (filtered.length === 0) {
+          results.innerHTML = "<p>No products found.</p>";
+          return;
+        }
+
+        filtered.forEach(product => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <h3>${product.name}</h3>
+            <p>Price: ₹${product.price}</p>
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
+            <button onclick="addToWishlist(${product.id})">Add to Wishlist</button>
+          `;
+
+          results.appendChild(card);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
