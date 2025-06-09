@@ -35,7 +35,7 @@ const products = [
     name: "Kids' Stylish Frame",
     price: 799,
     image: "https://tse1.mm.bing.net/th?id=OIP.-j53J6hmnrqKEI8NyemTBgHaHa&pid=Api&P=0&h=180"
-  }
+  },
   {
   id: 7,
   name: "Smart Blue Light Glasses",
