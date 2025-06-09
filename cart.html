@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>VisionKart - Cart</title>
-<link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <title>Your Cart - VisionKart</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+  <script src="cart.js" defer></script>
 </head>
 <body>
+  <header>
+    <h1>VisionKart</h1>
+    <nav>
+      <a href="home.html">Home</a> |
+      <a href="search.html">Search</a> |
+      <a href="wishlist.html">Wishlist</a>
+    </nav>
+  </header>
 
-<header>
-  <nav>
-    <a href="home.html">Home</a> |
-    <a href="wishlist.html">Wishlist</a> |
-    <a href="cart.html">Cart</a> |
-    <a href="search.html">Search</a> |
-    <a href="index.html" id="logoutLink">Logout</a>
-  </nav>
-</header>
-
-<main>
-  <h1>Your Cart</h1>
-  <div id="cartItems"></div>
-  <button id="placeOrderBtn">Place Order</button>
-</main>
-
-<div id="notification-container"></div>
-
-<script src="js/app.js"></script>
-<script src="js/cart.js"></script>
+  <main>
+    <h2>Your Cart</h2>
+    <div class="product-container" id="cart-container"></div>
+  </main>
 </body>
 </html>
